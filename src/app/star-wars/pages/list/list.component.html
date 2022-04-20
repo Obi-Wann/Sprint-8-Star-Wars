@@ -1,0 +1,35 @@
+
+
+<mat-grid-list cols="1"  *ngIf="!listShips; else list">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #list>
+
+<div class="container" infiniteScroll (scrolled)="onScrollDown()">
+ <div  class="row justify-content-center "> 
+    <div class=" col-11 text-center  animate__animated  animate__backInLeft">
+        <div class="border border-dark m-1"
+               *ngFor="let ship of  listShips, index as i"
+               [routerLink]="['/star-wars/ship', i]"
+               (click)="urlShip(ship)">
+            <h1>{{ship.name}}</h1>
+            <h4>{{ship.model}}</h4>                              
+            <!-- <h4>{{ship.url}}</h4>                                                             -->
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="">
+    <button *ngIf="showGoUpButton"
+                    class="btn btn-info float-end"
+                    (click)="onScrollTop()">
+                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18"></path></svg>
+                    UP
+                </button>
+</div>
+</ng-template>
+

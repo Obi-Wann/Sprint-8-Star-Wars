@@ -1,0 +1,60 @@
+<div class=" animate__animated animate__zoomIn">
+
+  <form (ngSubmit)="saveRegister()" autocomplete="off" [formGroup]="miForm">
+    <div class="container-fluid mt-5">
+      <div class="row justify-content-center ">
+        <div class="col-7" >
+                <div class="mb-3 ">
+                  <label for="exampleInputEmail1" class="form-label">JEDI-USERNAME</label>
+                  <input type="text" 
+                            class="form-control" 
+                            formControlName="username"
+                            id="exampleInputEmail1">
+                            <span class="form-text text-danger"
+                            *ngIf="noValidForm('username')">
+                            USERNAME MIN. SIX LETTERS
+                            </span>
+                </div>
+                <div class="mb-3 ">
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input type="email" 
+                            class="form-control" 
+                            formControlName="email"
+                            id="exampleInputEmail1">
+                            <span class="form-text text-danger"
+                            *ngIf="noValidForm('email')">
+                                INVALID EMAIL
+                              </span>
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label">Password</label>
+                              <input type="password" 
+                              class="form-control" 
+                              formControlName="password"
+                              id="exampleInputPassword1">
+                              <span class="form-text text-danger"
+                              *ngIf="noValidForm('password')">
+                              PASSWORD MIN. SIX  CHARACTERS
+                        </span>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                  <input type="password" 
+                  class="form-control" 
+                  formControlName="confirmpassword"
+                  id="exampleInputPassword1">
+                           <span class="form-text text-danger"
+                           *ngIf="noValidForm('password')">
+                           PASSWORDS MUST BE THE SAME
+                        </span>
+                      </div>
+                <button type="submit" 
+                class="btn btn-info float-end">
+                            Save
+                        </button>
+                      </div>
+        </div>
+      </div>
+</form>
+
+</div>

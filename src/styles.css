@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+html { height: 100%; }
+
+body { 
+    margin: 10px; 
+    background-image: url(./assets/universe.gif);
+    background-size: cover;
+    background-position: center;
+    color: antiquewhite;
+}
+
+* {
+    font-family: "Agency FB";
+  }
+
+
