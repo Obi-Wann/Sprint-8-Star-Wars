@@ -1,11 +1,8 @@
 
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { Observable,of,  } from 'rxjs';
-import {  tap, map, catchError } from 'rxjs/operators';
 import { User } from '../interfaces/auth2.interface';
-import { AbstractControl, ValidationErrors, FormGroup } from '@angular/forms';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 
 @Injectable({
@@ -49,8 +46,6 @@ saveLogin(newLogin:User){
     // console.log('no iguales');
     return this.loginOk=false
   }
-
-
 }
 
   // Verificación password

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from '../../interfaces/auth2.interface';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -9,6 +8,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent  {
  
   constructor(private router:Router,
@@ -30,8 +30,6 @@ export class RegisterComponent  {
        return this.miForm.controls[value].errors && this.miForm.controls[value].touched
     }
     
-  
-
     // Register new user
      newUser:any={}
 
@@ -50,11 +48,5 @@ export class RegisterComponent  {
       this.authService.saveRegister(this.newUser)
    
       console.log(this.miForm.value);
-     
-   
     }
-  
-
-
-
 }

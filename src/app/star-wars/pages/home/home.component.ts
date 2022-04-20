@@ -10,7 +10,7 @@ import { StarService } from '../../services/star.service';
 })
 export class HomeComponent implements OnInit {
 
-  get user(){
+get user(){
     return this.authSevice.usernameHeader;
   }
 
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logout(){
+logout(){
     this.router.navigate(['./auth']);
     localStorage.clear();
 }
